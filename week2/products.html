@@ -95,7 +95,7 @@
                   </div>
                 </div>
               </div>
-              <template v-for="img in temp.imagesUrl">
+              <template v-for="img in temp.imagesUrl" :key="img">
                 <img v-bind:src="img" alt="" class="images m-2">
               </template>
             </template>

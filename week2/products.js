@@ -37,7 +37,8 @@ createApp({
       .then((res)=>{
         // 把資料塞到 products裡
         console.log(res, "products")
-        this.products = res.products;
+        //this.products = res.products; //少一層
+        this.products = res.data.products;
       })
       .catch((err)=>{
         alert(err.response.data.message)

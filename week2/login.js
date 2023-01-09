@@ -5,7 +5,7 @@ createApp({
   data() {
     return {
       user: {
-        username: '', // 詢問同學才知道v-model 可以雙向綁定(???)
+        username: '', 
         password: '',
       },
     }
@@ -13,7 +13,7 @@ createApp({
    methods:{
     login(){
       const url = 'https://vue3-course-api.hexschool.io/v2/admin/signin';
-      const path = "Austyn_freegameXT";
+      //const path = "Austyn_freegameXT";
 
       //console.log(user);
       // 這邊一定要用this.user 不然根本抓不到user
@@ -26,9 +26,8 @@ createApp({
         //console.log(token, expired); // 印出token結果
 
         // 存在cookie
-        //document.cookie = `loginToken=${token};expires=${expired};`;
-        // 怎麼解答寫法跟上課不一樣?
-        document.cookie = `hexToken=${token};expires=${new Date(expired)}; path=/`;
+        //document.cookie = `loginToken=${token};expires=${expired};`; //課堂的
+        document.cookie = `hexToken=${token};expires=${new Date(expired)}; path=/`; // 解答的
         // 登入成功時，存下token
         axios.defaults.headers.common["Authorization"] = token;
 
